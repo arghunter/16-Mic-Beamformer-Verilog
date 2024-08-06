@@ -1,0 +1,19 @@
+{
+  "DESIGN_NAME": "cic",
+  "VERILOG_FILES": 
+	["dir::incrementor.v",
+  "dir::integrator.v",
+  "dir::differentiator.v",
+  "dir::cic.v"
+
+        ],
+  "CLOCK_PERIOD": 333,
+  "CLOCK_PORT": "clk",
+  "FP_CORE_UTIL": 80,
+  "PL_TARGET_DENSITY": 0.80,
+  "FP_SIZING": "absolute",
+  "DIE_AREA": "0 0 160 200",
+  "CORE_AREA": "10 10 150 190",
+  "QUIT_ON_LINTER_ERRORS": 0,
+  "ROUTING_CORES": 32
+}
