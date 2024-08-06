@@ -2,7 +2,7 @@ module incrementor (
 	input wire clk,
 	input wire in,
 	input wire rst,
-	output reg [18:0]
+	output reg [18:0] out
 );
 
 	reg [18:0] data;
