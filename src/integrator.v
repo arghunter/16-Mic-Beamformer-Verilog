@@ -3,9 +3,8 @@ module integrator(
     input wire rst,
     input wire [18:0] in,
     output reg [18:0] out
-
-);// one sec gtg got a call
-    reg[18:0] data;
+);
+    reg [18:0] data;
 
 
     always @(posedge clk or posedge rst) begin
