@@ -9,14 +9,10 @@ module integrator(
 
     always @(posedge clk or posedge rst) begin
     	if (rst) begin
-	    data<=0;
-	    out<=0;
+	        out<=0;
         end else begin
-	    out<=data+in;
-	    data<=data+in;
+	        out<=out+in;
 	end
-
-
     end
 endmodule
 
