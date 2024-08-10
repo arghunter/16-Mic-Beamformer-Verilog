@@ -1,6 +1,8 @@
-`include "incrementor.v"
-`include "integrator.v"
-`include "differentiator.v"
+// `include "incrementor.v"
+// `include "integrator.v"
+// // `include "differentiator.v"
+// `include "op_differentiator.v"
+
 module cic (
     input wire clk,
     input wire dec_clk,
@@ -12,8 +14,7 @@ module cic (
     wire [18:0] inc_out;
     wire [18:0] int_1_out;
     wire [18:0] int_2_out;
-	wire [18:0] diff_1_out;
-	wire [18:0] diff_2_out;
+
     generate 
 		incrementor u_incrementor(
 			.clk(clk),
@@ -33,22 +34,11 @@ module cic (
 			.in(int_1_out),
 			.out(int_2_out)
 		);
-		differentiator u_differentiator_1(
-			.clk(dec_clk),
+		op_differentiator u_differentiator(
+			.clk(clk),
 			.rst(rst),
+			.lr_clk(dec_clk),
 			.in(int_2_out),
-			.out(diff_1_out)
-		);
-		differentiator u_differentiator_2(
-			.clk(dec_clk),
-			.rst(rst),
-			.in(diff_1_out),
-			.out(diff_2_out)
-		);
-		differentiator u_differentiator_3(
-			.clk(dec_clk),
-			.rst(rst),
-			.in(diff_2_out),
 			.out(out)
 		);
     endgenerate
