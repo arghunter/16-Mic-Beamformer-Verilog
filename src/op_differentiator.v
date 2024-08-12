@@ -1,3 +1,5 @@
+// `include "adder.v"
+// `include "mux.v"
 module op_differentiator (
     input wire clk,
     input wire rst,
@@ -5,13 +7,32 @@ module op_differentiator (
     input wire [18:0] in,
     output reg [18:0] out
 );
+    reg [18:0] zero=0;
     reg [18:0] temp;
     reg [18:0] prev1;
     reg [18:0] prev2;
     reg [18:0] prev3;
     reg [2:0] count;
     reg prev_lr_clk;
+    wire [18:0] mux_out;
+    wire [18:0] adder_out;
+    generate
+        mux4to1 a_mux4to1(//Prolly dont need this
+          .sel(count[1:0]),
+          .d0(zero),
+          .d1(prev1),
+          .d2(prev2),
+          .d3(prev3),
+          .y(mux_out)
+        );
+        adder u_adder(
+            .a(mux_out),
+            .b(temp),
+            .out(adder_out)
+        );
 
+    endgenerate
+//MADE AN ADDER AND USE MUXES TO CONTROL INPUT OUTPUT
     always @(posedge clk or posedge rst) begin
 
         if (rst) begin
@@ -27,21 +48,24 @@ module op_differentiator (
             end else begin
                 case (count)
                     0 : begin
-                        temp <= prev2;
-                        prev2<=in-prev1;
+                        temp<=prev1;
                         prev1<=in;
-                        count<=count+1;
+                        count<=1;
                     end
                     1 : begin
-                        
-                        prev3<=prev2-temp;
-                        temp<=prev3;
-                        count<=count+1;
+                        temp <= prev2;
+                        prev2<=adder_out;
+                        count<=2;
                     end
                     2 : begin
-                        out<=prev3-temp;
                         
-                        count<=count+1;
+                        prev3<=adder_out;
+                        temp<=prev3;
+                        count<=3;
+                    end
+                    3 : begin
+                        out<=adder_out;
+                        count<=4;
                     end
                 endcase
             end
