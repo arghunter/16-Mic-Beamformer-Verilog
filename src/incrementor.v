@@ -2,7 +2,7 @@ module incrementor (
 	input wire clk,
 	input wire in,
 	input wire rst,
-	output reg [18:0] out
+	output reg [23:0] out
 );
 	always @(posedge clk or posedge rst) begin
 		if(rst) begin 
