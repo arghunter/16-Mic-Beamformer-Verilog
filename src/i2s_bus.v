@@ -1,3 +1,4 @@
+// `include "mux_shift.v"
 module i2s_bus(
     input wire clk,
     input wire rst,

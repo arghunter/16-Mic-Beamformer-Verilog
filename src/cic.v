@@ -1,22 +1,22 @@
 // `include "incrementor.v"
 // `include "integrator.v"
-// // `include "differentiator.v"
+
 // `include "op_differentiator.v"
 
 module cic (
     input wire clk,
     input wire dec_clk,
     input wire rst,
-    input wire in,
-    output [18:0] out 
+    input wire [4:0] in,
+    output [23:0] out 
 );
 
-    wire [18:0] inc_out;
-    wire [18:0] int_1_out;
-    wire [18:0] int_2_out;
+    wire [23:0] inc_out;
+    wire [23:0] int_1_out;
+    wire [23:0] int_2_out;
 
     generate 
-		incrementor u_incrementor(
+		integrator u_integrator_0(
 			.clk(clk),
 			.rst(rst),
 			.in(in),

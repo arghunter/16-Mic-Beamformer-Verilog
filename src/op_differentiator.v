@@ -4,18 +4,18 @@ module op_differentiator (
     input wire clk,
     input wire rst,
     input wire lr_clk,
-    input wire [18:0] in,
-    output reg [18:0] out
+    input wire [23:0] in,
+    output reg [23:0] out
 );
-    reg [18:0] zero=0;
-    reg [18:0] temp;
-    reg [18:0] prev1;
-    reg [18:0] prev2;
-    reg [18:0] prev3;
+    reg [23:0] zero=0;
+    reg [23:0] temp;
+    reg [23:0] prev1;
+    reg [23:0] prev2;
+    reg [23:0] prev3;
     reg [2:0] count;
     reg prev_lr_clk;
-    wire [18:0] mux_out;
-    wire [18:0] adder_out;
+    wire [23:0] mux_out;
+    wire [23:0] adder_out;
     generate
         mux4to1 a_mux4to1(//Prolly dont need this
           .sel(count[1:0]),
