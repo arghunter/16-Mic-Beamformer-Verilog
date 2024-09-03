@@ -6,7 +6,7 @@ module top_module(
     input wire clk,
     input wire dec_clk,
     input wire rst,
-    input wire [15:0] in,
+    input wire [7:0] in,
     output wire out,
     output wire cic_outr
 
