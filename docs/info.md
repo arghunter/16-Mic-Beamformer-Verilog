@@ -16,5 +16,5 @@ You can test it (testing)
 Explain how to use your project
 
 ## External hardware
-Microphones and clock generators
+You need 16 digital microphones, a clock generator (can be a raspberry pi, microcontroller, etc.), and something that recieves the I2S output (this can be a rapberry pi or most auido output devices).
 List external hardware used in your project (e.g. PMOD, LED display, etc), if any
