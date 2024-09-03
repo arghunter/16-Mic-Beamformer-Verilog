@@ -16,6 +16,7 @@ wire [7:0] sdr_data_0;
 wire [7:0] sdr_data_1;
 wire [15:0] mic_data;
 wire [23:0] cic_out;
+wire [31:0] extended_cic_out;
 assign mic_data[0] = sdr_data_0[0];
 assign mic_data[1] = sdr_data_1[0];
 assign mic_data[2] = sdr_data_0[1];
@@ -32,6 +33,7 @@ assign mic_data[12] = sdr_data_0[6];
 assign mic_data[13] = sdr_data_1[6];
 assign mic_data[14] = sdr_data_0[7];
 assign mic_data[15] = sdr_data_1[7];
+assign extended_cic_out = {{8{cic_out[23]}}, cic_out};
 
     generate 
     multi_ddr_to_sdr u_multi_ddr_to_sdr(
@@ -57,7 +59,7 @@ assign mic_data[15] = sdr_data_1[7];
         .clk(clk),
         .rst(rst),
         .lr_clk(dec_clk),
-        .bit_data(cic_out),
+        .bit_data(extended_cic_out),
         .out(out)
     );
     endgenerate
