@@ -1,7 +1,5 @@
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/test/badge.svg) ![](../../workflows/fpga/badge.svg)
 
-# The Goal
-Figure out how small and effecient of a CIC filter I can make, I'll iterativly shrink it.
 
 
 
