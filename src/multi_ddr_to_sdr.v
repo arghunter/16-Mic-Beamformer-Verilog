@@ -2,7 +2,7 @@
 module multi_ddr_to_sdr(
     input wire clk,
     input wire rst,
-    input wire [15:0] ddr_data,
+    input wire [7:0] ddr_data,
     output wire [7:0] sdr_data_0,
     output wire [7:0] sdr_data_1
 );
