@@ -14,14 +14,15 @@ module cic (
     wire [23:0] inc_out;
     wire [23:0] int_1_out;
     wire [23:0] int_2_out;
-
+	wire [23:0] extended_in;
+	assign extended_in = {{19{in[4]}}, in}; 
     generate 
 		integrator u_integrator_0(
 			.clk(clk),
 			.rst(rst),
-			.in(in),
+			.in(extended_in),  // Pass the sign-extended input
 			.out(inc_out)
-			);
+		);
 		integrator u_integrator_1(
 			.clk(clk),
 			.rst(rst),
