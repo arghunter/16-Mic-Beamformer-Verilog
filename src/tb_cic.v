@@ -6,7 +6,7 @@ reg dec_clk;
 reg reset;
 
 // Input signal
-reg [15:0]input_signal;
+    reg [7:0]input_signal;
 
 // Output signal (if any, replace 'output_signal' with the actual output of your DUT)
 wire  output_signal;
@@ -52,14 +52,7 @@ initial begin
         input_signal[5] = input_data[i];
         input_signal[6] = input_data[i];
         input_signal[7] = input_data[i];
-        input_signal[8] = input_data[i];
-        input_signal[9] = input_data[i];
-        input_signal[10] = input_data[i];
-        input_signal[11] = input_data[i];
-        input_signal[12] = input_data[i];
-        input_signal[13] = input_data[i];
-        input_signal[14] = input_data[i];
-        input_signal[15] = input_data[i];
+
         @(posedge clk); // Apply input at the rising edge of clk
     end
 
