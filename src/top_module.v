@@ -10,7 +10,7 @@ module top_module(
     output wire out
 
 );
-
+ 
 wire [4:0] adder_out;
 wire [7:0] sdr_data_0;
 wire [7:0] sdr_data_1;
