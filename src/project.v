@@ -25,11 +25,16 @@ wire lr_clk;
   assign uio_oe  = 0;
   assign bit_clk = uio_in[0];
   assign lr_clk = uio_in[1]; 
-  assign uio_oe[7]  = 0;
   assign rst = !rst_n;
 
   generate 
-      top_module u_top_module();
+      top_module u_top_module(
+          .clk(),
+          .decclk(),
+          .rst(),
+          .in(),
+          .out()
+      );
       
   // List all unused inputs to prevent warnings
     wire _unused = &{ena, clk,uio_in[2:7], 1'b0};
