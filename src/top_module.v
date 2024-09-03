@@ -7,8 +7,7 @@ module top_module(
     input wire dec_clk,
     input wire rst,
     input wire [7:0] in,
-    output wire out,
-    output wire cic_outr
+    output wire out
 
 );
 
@@ -33,7 +32,7 @@ assign mic_data[12] = sdr_data_0[6];
 assign mic_data[13] = sdr_data_1[6];
 assign mic_data[14] = sdr_data_0[7];
 assign mic_data[15] = sdr_data_1[7];
-assign cic_outr = cic_out;
+
     generate 
     multi_ddr_to_sdr u_multi_ddr_to_sdr(
         .clk(clk),
