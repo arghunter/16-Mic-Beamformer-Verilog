@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Your Name
+ * Copyright (c) 2024 Armaan Gomes
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -18,6 +18,8 @@ module tt_um_beamformer_arghunter (
 wire rst;
 wire bit_clk;
 wire lr_clk; 
+wire [7:0] in;
+wire out;
     
   // All output pins must be assigned. If not used, assign to 0.
   // assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
@@ -26,14 +28,16 @@ wire lr_clk;
   assign bit_clk = uio_in[0];
   assign lr_clk = uio_in[1]; 
   assign rst = !rst_n;
-
+  assign in = ui_in;
+  assign uo_out[0] = out;
+  assign uo_out[1:7] = 0;
   generate 
       top_module u_top_module(
-          .clk(),
-          .decclk(),
-          .rst(),
-          .in(),
-          .out()
+          .clk(bit_clk),
+          .dec_clk(lr_clk),
+          .rst(rst),
+          .in(in),
+          .out(out)
       );
       
   // List all unused inputs to prevent warnings
