@@ -17,7 +17,11 @@
   ],
   "CLOCK_PERIOD": 333,
   "CLOCK_PORT": "clk",
+  "FP_CORE_UTIL": 80,
   "PL_TARGET_DENSITY": 0.80,
+  "FP_SIZING": "absolute",
+  "DIE_AREA": "0 0 160 200",
+  "CORE_AREA": "5 5 155 195",
   "QUIT_ON_LINTER_ERRORS": 0,
   "ROUTING_CORES": 32
 }
