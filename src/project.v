@@ -30,7 +30,7 @@ wire out;
   assign rst = !rst_n;
   assign in = ui_in;
   assign uo_out[0] = out;
-  assign uo_out[1:7] = 0;
+  assign uo_out[7:1] = 0;
   generate 
       top_module u_top_module(
           .clk(bit_clk),
@@ -41,6 +41,6 @@ wire out;
       );
   endgenerate
   // List all unused inputs to prevent warnings
-    wire _unused = &{ena, clk,uio_in[2:7], 1'b0};
+    wire _unused = &{ena, clk,uio_in[7:2], 1'b0};
 
 endmodule
