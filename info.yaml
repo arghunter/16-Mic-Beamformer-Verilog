@@ -19,6 +19,7 @@ project:
   source_files:
     - "project.v"
     - "incrementor.v"
+    - "integrator.v"
     - "adder.v"
     - "mux.v"
     - "op_differentiator.v"
