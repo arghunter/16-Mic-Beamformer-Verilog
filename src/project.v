@@ -39,7 +39,7 @@ wire out;
           .in(in),
           .out(out)
       );
-      
+  endgenerate
   // List all unused inputs to prevent warnings
     wire _unused = &{ena, clk,uio_in[2:7], 1'b0};
 
