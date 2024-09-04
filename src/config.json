@@ -1,5 +1,5 @@
 {
-  "DESIGN_NAME": "top_module",
+  "DESIGN_NAME": "tt_um_16_mic_beamformer_arghunter",
   "VERILOG_FILES": 
 	["dir::incrementor.v",
   "dir::integrator.v",
@@ -12,7 +12,8 @@
   "dir::multi_ddr_to_sdr.v",
   "dir::mux_shift.v",
   "dir::i2s_bus.v",
-  "dir::top_module.v"
+  "dir::top_module.v",
+  "dir::project.v"
   ],
   "CLOCK_PERIOD": 333,
   "CLOCK_PORT": "clk",
