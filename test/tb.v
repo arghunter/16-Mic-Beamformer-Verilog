@@ -33,7 +33,7 @@ module tb ();
      .ena(ena),
      .clk(clk),
      .rst_n(rst_n)
- );
+
              
       // Include power ports for the Gate Level test:
 `ifdef GL_TEST
