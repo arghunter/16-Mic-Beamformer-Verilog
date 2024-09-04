@@ -25,14 +25,7 @@ module tb ();
 
   // Replace tt_um_example with your module name:
   tt_um_16_mic_beamformer_arghunter user_project (
-     .ui_in(ui_in),
-     .uo_out(uo_out),
-     .uio_in(uio_in),
-     .uio_out(uio_out),
-     .uio_oe(uio_oe),
-     .ena(ena),
-     .clk(clk),
-     .rst_n(rst_n)
+
 
              
       // Include power ports for the Gate Level test:
