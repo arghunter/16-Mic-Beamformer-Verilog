@@ -7,6 +7,7 @@ TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
 PROJECT_SOURCES = project.v
 PROJECT_SOURCES += incrementor.v
+PROJECT_SOURCES += integrator.v
 PROJECT_SOURCES += adder.v
 PROJECT_SOURCES += mux.v
 PROJECT_SOURCES += op_differentiator.v
