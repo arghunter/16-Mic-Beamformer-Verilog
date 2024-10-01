@@ -32,4 +32,4 @@ The 16 Microphone Beamformer performs delay and sum beamforming an 16 microphone
   -  Record data from I2S reciever (Varies based on chosen reciever)
 ## External hardware
 You need 16 digital microphones, a clock generator (can be a raspberry pi, microcontroller, etc.), and something that recieves the I2S output (this can be a rapberry pi or most auido output devices).
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+
